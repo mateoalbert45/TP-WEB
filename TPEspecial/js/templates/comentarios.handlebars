@@ -1,0 +1,25 @@
+
+<h1>Lista de Comentarios</h1>
+
+    <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Texto</th>
+        <th scope="col">Calificacion</th>
+        <th scope="col">Id del producto</th>
+      </tr>
+    </thead>
+    {{#each comentarios}}
+    <tbody>
+      <tr>
+        <td>{{texto}}</td>
+        <td>{{calificacion}}</td>
+        <td>{{id_producto}}</td>
+        {{#if ../admin}}
+        <td><button class="borrarcomentario" value="{{id}}" type="button" name="button">Borrar</button></td>
+        {{/if}}
+      </tr>
+
+    </tbody>
+    {{/each}}
+  </table>
