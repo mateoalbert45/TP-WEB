@@ -1,6 +1,8 @@
 
 <h1>Lista de Comentarios</h1>
+<button id="OrdenAscendiente" value="asc"class="OrdenAscendiente btn btn-default">Ordenar Ascendientemente</button>
 
+<button id="OrdenDescendiente" value="desc"class="OrdenDescendiente btn btn-default">Ordenar OrdenDescendiente</button>
     <table class="table">
     <thead>
       <tr>
@@ -16,7 +18,7 @@
         <td>{{calificacion}}</td>
         <td>{{id_producto}}</td>
         {{#if ../admin}}
-        <td><button class="borrarcomentario" value="{{id}}" type="button" name="button">Borrar</button></td>
+        <td><button class="borrarcomentario btn btn-default" value="{{id}}" type="button" name="button">Borrar</button></td>
         {{/if}}
       </tr>
 

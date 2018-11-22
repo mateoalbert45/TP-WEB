@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-11-22 22:56:34
+/* Smarty version 3.1.33, created on 2018-11-23 00:22:51
   from 'C:\xampp\htdocs\proyectos\TPEspecial\templates\MostrarProducto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bf72612e6eb68_47985858',
+  'unifunc' => 'content_5bf73a4babbfe8_42865396',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c88688941f07308c0d51ae40e692bb1080af310a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\TPEspecial\\templates\\MostrarProducto.tpl',
-      1 => 1542923793,
+      1 => 1542928960,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5bf72612e6eb68_47985858 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bf73a4babbfe8_42865396 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <div class="container">
@@ -78,7 +78,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 
 <h2>Crear Comentario</h2>
-<form id="CrearComentario">
+<form id="">
   <div class="form-group">
     <label for="nombreform">Texto</label>
     <input type="text" class="form-control" id="texto" name="nombreform" placeholder="">
@@ -95,7 +95,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
   </div>
 
   <button id="insertarComentario" value="<?php echo $_smarty_tpl->tpl_vars['producto']->value['id_producto'];?>
-" class="btn btn-default">Crear Comentario</button>
+" class="insertarComentario btn btn-default">Crear Comentario</button>
 </form>
 
 <?php if ($_smarty_tpl->tpl_vars['admin']->value == "true") {?>
@@ -106,10 +106,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 <input type="text" name="" id="idProducto" value="<?php echo $_smarty_tpl->tpl_vars['producto']->value['id_producto'];?>
 " hidden="hidden">
+
+
+  <div class="form-group">
 <div id="comentarios-container" class="comentarios-container">
 
 </div>
-
+</div>
 
            </div><!-- /.container -->
   </body>

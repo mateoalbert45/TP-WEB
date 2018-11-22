@@ -43,8 +43,13 @@ function activarbotones(){
 
   let botonborrarcomentario = document.querySelectorAll(".borrarcomentario");
   botonborrarcomentario.forEach(e=> e.addEventListener("click", function(){borrarcomentario(e.getAttribute("value"))}));
-}
 
+  let botonAscendiente = document.querySelectorAll(".OrdenAscendiente");
+  botonAscendiente.forEach(e=> e.addEventListener("click",function(){getComentariosOrdenado(e.getAttribute("value"))}));
+
+  let botonDescendiente = document.querySelectorAll(".OrdenDescendiente");
+  botonDescendiente.forEach(e=> e.addEventListener("click",function(){getComentariosOrdenado(e.getAttribute("value"))}));
+}
 
 
 
@@ -60,6 +65,20 @@ function getComentarios(){
 
 }
 
+
+function getComentariosOrdenado(ordenamiento){
+  let id = document.querySelector("#idProducto").value;
+  fetch(url + "/" + id)
+  .then(response => response.json())
+  .then(jsonComentarios => {
+    jsonComentarios = sortJSON(jsonComentarios,'calificacion', ordenamiento);
+    mostrarComentarios(jsonComentarios);
+    console.log(jsonComentarios);
+        activarbotones();
+  })
+
+}
+
 function mostrarComentarios(jsonComentarios){
 let boolean = verificarboolean(document.querySelector("#admin").getAttribute("value"));
 
@@ -69,6 +88,22 @@ let context = {
 }
 let html = templateComentarios(context);
 document.querySelector("#comentarios-container").innerHTML = html;
+}
+
+
+function sortJSON(data, key, orden) {
+    return data.sort(function (a, b) {
+        var x = a[key],
+        y = b[key];
+
+        if (orden === 'asc') {
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        }
+
+        if (orden === 'desc') {
+            return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+        }
+    });
 }
 
 

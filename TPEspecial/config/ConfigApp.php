@@ -34,6 +34,8 @@ class ConfigApp
       'MostrarProducto'=> 'ProductoController#MostrarProducto',
       'FiltrarProducto'=> 'ProductoController#FiltrarProducto'
 
+
+
     ];
 
 }

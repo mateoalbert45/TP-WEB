@@ -32,7 +32,7 @@
 
 
 <h2>Crear Comentario</h2>
-<form id="CrearComentario">
+<form id="">
   <div class="form-group">
     <label for="nombreform">Texto</label>
     <input type="text" class="form-control" id="texto" name="nombreform" placeholder="">
@@ -48,7 +48,7 @@
     </select>
   </div>
 
-  <button id="insertarComentario" value="{$producto['id_producto']}" class="btn btn-default">Crear Comentario</button>
+  <button id="insertarComentario" value="{$producto['id_producto']}" class="insertarComentario btn btn-default">Crear Comentario</button>
 </form>
 
 {if $admin eq "true"}
@@ -58,10 +58,13 @@
 {/if}
 
 <input type="text" name="" id="idProducto" value="{$producto['id_producto']}" hidden="hidden">
+
+
+  <div class="form-group">
 <div id="comentarios-container" class="comentarios-container">
 
 </div>
-
+</div>
 
            </div><!-- /.container -->
   </body>
