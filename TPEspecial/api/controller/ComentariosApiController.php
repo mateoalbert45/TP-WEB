@@ -1,9 +1,11 @@
 <?php
-
 require_once "Api.php";
+require_once "ApiSecuredController.php";
 require_once "./../model/ComentariosModel.php";
 
-class ComentariosApiController extends Api
+
+
+class ComentariosApiController extends ApiSecuredController
 {
 private $model;
 
@@ -14,6 +16,7 @@ private $model;
   }
 
 function GetComentarios($param = null){
+
   if (isset($param)) {
     $id_comentario = $param[0];
     $data  =  $this->model->GetComentario($id_comentario);
@@ -25,9 +28,11 @@ function GetComentarios($param = null){
     }else {
       return $this->json_response(null, 404);
     }
+
 }
 
 function BorrarComentarios($param){
+  if($_SESSION['admin'] == 1){
   if (count($param)==1) {
     $id_comentario = $param[0];
     $r = $this->model->BorrarComentarios($id_comentario);
@@ -35,6 +40,7 @@ function BorrarComentarios($param){
   }else {
     return $this->json_response("no anda", 404);
   }
+}
 }
 
 
@@ -45,17 +51,6 @@ function InsertarComentarios($param){
 
 }
 
-function EditarMarca($param = null){
-  if (count($param)==1) {
-  $id_marca = $param[0];
-  $arreglo= $this->getJSONData();
-  $r= $this->model->GuardarEditarMarca($arreglo->nombre,$arreglo->descripcion,$id_marca);
-  return $this->json_response($r, 200);
-
-}else {
-  return $this->json_response("no anda", 404);
-}
-}
 
 
 }

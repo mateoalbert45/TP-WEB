@@ -1,9 +1,10 @@
 <?php
-
-class ApiSecuredController
+require_once "Api.php";
+class ApiSecuredController extends Api
 {
 
   function __construct(){
+    parent::__construct();
     session_start();
     if(isset($_SESSION["User"])){
       //if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 20)) {

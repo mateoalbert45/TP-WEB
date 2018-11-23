@@ -4,9 +4,8 @@ define('ACTION', 0);
 define('PARAMS', 1);
 
 require_once "config/ConfigApi.php";
-require_once "controller/MarcasApiController.php";
-require_once "controller/ProductosApiController.php";
 require_once "controller/ComentariosApiController.php";
+require_once "controller/ApiSecuredController.php";
 
 function parseURL($url)
 {
